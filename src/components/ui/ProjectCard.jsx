@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { GitHubIcon } from "./SocialIcons";
 
@@ -40,11 +41,20 @@ function ProjectLinks({ project, variant = "overlay" }) {
 }
 
 export default function ProjectCard({ project }) {
+  const [imageError, setImageError] = useState(false);
+  const showImage = project.image && !imageError;
+
   return (
     <article className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] transition-all duration-300 hover:border-[var(--accent)] md:hover:-translate-y-1 md:hover:shadow-xl md:hover:shadow-indigo-500/10">
       <div className={`relative flex h-40 items-center justify-center bg-gradient-to-br sm:h-48 ${project.gradient}`}>
-        {project.image ? (
-          <img src={project.image} alt={project.title} loading="lazy" className="h-full w-full object-cover" />
+        {showImage ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            onError={() => setImageError(true)}
+            className="h-full w-full object-cover"
+          />
         ) : (
           <span className="text-3xl font-bold text-white/90 sm:text-4xl">{project.title.charAt(0)}</span>
         )}

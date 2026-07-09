@@ -1,38 +1,40 @@
 export const projects = [
   {
-    id: "taskflow",
-    title: "TaskFlow",
+    id: "travelease",
+    title: "TravelEase",
     description:
-      "A collaborative task management app with real-time updates, drag-and-drop boards, and team workspaces. Built as the lead frontend developer.",
-    image: null,
+      "Developed a full-stack travel booking platform with authentication, tour booking, and an admin dashboard for managing tours, bookings, customers, and content. Built with Next.js, Supabase, and Better Auth, featuring responsive design, advanced search and filtering, and a scalable architecture.",
+    image: "/projects/travelease.png",
     gradient: "from-indigo-500 to-purple-600",
-    tags: ["React", "TypeScript", "Tailwind", "Firebase"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/Htethtoolwin-dev",
+    tags: ["React", "Next.js", "Supabase", "Better Auth"],
+    liveUrl: "https://travel-ease-tau.vercel.app/",
+    githubUrl: "https://github.com/Htethtoolwin-dev/TravelEase",
     featured: true,
   },
+
   {
-    id: "AI-Driven Analytics",
+    id: "ai-driven-analytics",
     title: "AI-Driven Analytics",
     description:
-      "A beautiful dashboard that uses AI to analyze data and provide insights.",
-    image: null,
+      "Built a serverless AI-powered dashboard that processes CSV, Excel, PDF, Word, and TXT files in the browser, using Google Gemini API to generate summaries, trends, and business insights.",
+    image: "/projects/ai-driven-analytics.png",
     gradient: "from-sky-400 to-blue-600",
-    tags: ["React", "Tailwind", "Google Gemeni API"],
+    tags: ["React", "Tailwind", "Recharts", "Google Gemini API"],
     liveUrl: "https://ai-driven-analytics.vercel.app/",
     githubUrl: "https://github.com/Htethtoolwin-dev/AI-Driven-Analytics-",
     featured: true,
   },
+
   {
-    id: "devblog",
-    title: "DevBlog",
+    id: "logitrack",
+    title: "Logitrack",
     description:
-      "A minimalist developer blog with MDX support, syntax highlighting, and dark mode. Designed and built from scratch with SEO best practices.",
-    image: null,
+      "Built an interactive B2B logistics dashboard with fleet management, driver dispatch, and drag-and-drop route planning.",
+    image: "/projects/logitrack.png",
     gradient: "from-emerald-400 to-teal-600",
-    tags: ["Next.js", "MDX", "Tailwind"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/Htethtoolwin-dev",
+    tags: ["React", "Tailwind", "Context API"],
+    liveUrl: "https://logitrack-sand-sigma.vercel.app/",
+    githubUrl: "https://github.com/Htethtoolwin-dev/Logitrack",
     featured: true,
   },
 ];

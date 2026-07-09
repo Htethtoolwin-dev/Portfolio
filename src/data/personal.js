@@ -21,7 +21,7 @@ export const personal = {
   ],
   social: {
     github: "https://github.com/Htethtoolwin-dev",
-    linkedin: "https://linkedin.com/in/username",
+    linkedin: "https://www.linkedin.com/in/htet-htoo-lwin-bb5bb6372?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     twitter: "",
   },
 };
