@@ -16,7 +16,14 @@ export default function About() {
               <MapPin size={16} className="text-[var(--accent)]" /> {personal.location}
             </div>
             <div className="pt-4">
-              <a href={personal.resumeUrl} download={personal.resumeFileName} aria-label="Download CV as PDF" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] px-5 py-3 text-sm font-medium text-[var(--text-primary)] transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] sm:px-6">
+              <a
+                href={personal.resumeUrl}
+                download={personal.resumeFileName}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download CV as PDF"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--bg-secondary)] px-5 py-3 text-sm font-medium text-[var(--text-primary)] transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] sm:px-6"
+              >
                 <Download size={16} /> Download CV
               </a>
             </div>
