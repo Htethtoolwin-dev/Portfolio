@@ -16,19 +16,7 @@ const round = (v, precision = 3) => parseFloat(v.toFixed(precision));
 const adjust = (v, fMin, fMax, tMin, tMax) =>
   round(tMin + ((tMax - tMin) * (v - fMin)) / (fMax - fMin));
 
-// Inject keyframes once
-const KEYFRAMES_ID = "pc-keyframes";
-if (typeof document !== "undefined" && !document.getElementById(KEYFRAMES_ID)) {
-  const style = document.createElement("style");
-  style.id = KEYFRAMES_ID;
-  style.textContent = `
-    @keyframes pc-holo-bg {
-      0% { background-position: 0 var(--background-y), 0 0, center; }
-      100% { background-position: 0 var(--background-y), 90% 90%, center; }
-    }
-  `;
-  document.head.appendChild(style);
-}
+// Keyframes live in index.css (@keyframes pc-holo-bg)
 
 const ProfileCardComponent = ({
   avatarUrl,
@@ -123,7 +111,7 @@ const ProfileCardComponent = ({
         Math.abs(targetX - currentX) > 0.05 ||
         Math.abs(targetY - currentY) > 0.05;
 
-      if (stillFar || document.hasFocus()) {
+      if (stillFar) {
         rafId = requestAnimationFrame(step);
       } else {
         running = false;
@@ -527,7 +515,9 @@ const ProfileCardComponent = ({
                 className="absolute bottom-[-1px] left-1/2 h-auto max-h-[80%] w-full object-contain object-bottom backface-hidden will-change-transform transition-transform duration-[120ms] ease-out"
                 src={avatarUrl}
                 alt={`${name || "User"} avatar`}
-                loading="lazy"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 style={{
                   transformOrigin: "50% 100%",
                   transform:

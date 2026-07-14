@@ -1,6 +1,18 @@
 export function scrollToSection(id) {
-  const element = document.getElementById(id.replace("#", ""));
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
+  const slug = id.replace("#", "");
+
+  const tryScroll = (attempts = 0) => {
+    const element = document.getElementById(slug);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
+
+    if (attempts < 24) {
+      window.dispatchEvent(new CustomEvent("portfolio:preload-sections"));
+      window.setTimeout(() => tryScroll(attempts + 1), 50);
+    }
+  };
+
+  tryScroll();
 }

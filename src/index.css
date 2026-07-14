@@ -168,6 +168,30 @@ body {
   }
 }
 
+@keyframes pc-holo-bg {
+  0% {
+    background-position: 0 var(--background-y), 0 0, center;
+  }
+  100% {
+    background-position: 0 var(--background-y), 90% 90%, center;
+  }
+}
+
+@supports (content-visibility: auto) {
+  main > section:not(#home) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+}
+
+@media (max-width: 639px) {
+  .animate-mesh-drift,
+  .animate-mesh-drift-reverse,
+  .animate-glow-pulse {
+    animation-duration: 20s;
+  }
+}
+
 .reveal {
   opacity: 0;
   transition:

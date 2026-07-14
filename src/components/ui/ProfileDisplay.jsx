@@ -5,7 +5,9 @@ import ProfileCard from "./ProfileCard";
 
 function getEnableTilt() {
   if (typeof window === "undefined") return true;
-  return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+  if (window.matchMedia("(hover: none)").matches) return false;
+  return true;
 }
 
 export default function ProfileDisplay() {

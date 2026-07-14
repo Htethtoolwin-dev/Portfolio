@@ -2,6 +2,7 @@ import { Download, ExternalLink } from "lucide-react";
 import { personal } from "../../data/personal";
 import SectionHeading from "../ui/SectionHeading";
 import Reveal from "../ui/Reveal";
+import LazyIframe from "../ui/LazyIframe";
 
 const actionClass =
   "btn-shine inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-secondary)] sm:w-auto sm:px-6";
@@ -40,10 +41,11 @@ export default function CV() {
           </div>
 
           <div className="card-hover-lift overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-primary)] shadow-lg">
-            <iframe
+            <LazyIframe
               src={personal.resumeUrl}
               title={`${personal.name} - Curriculum Vitae`}
-              className="h-[70vh] min-h-[480px] w-full"
+              placeholderClassName="w-full"
+              className="h-[50vh] min-h-[280px] w-full sm:h-[58vh] sm:min-h-[360px] lg:h-[70vh] lg:min-h-[480px]"
             />
           </div>
 

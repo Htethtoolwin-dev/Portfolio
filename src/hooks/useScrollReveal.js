@@ -8,6 +8,8 @@ function getInitialVisible() {
 export function useScrollReveal(options = {}) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(getInitialVisible);
+  const threshold = options.threshold ?? 0.12;
+  const rootMargin = options.rootMargin ?? "0px 0px -48px 0px";
 
   useEffect(() => {
     if (visible) return;
@@ -22,15 +24,12 @@ export function useScrollReveal(options = {}) {
           observer.disconnect();
         }
       },
-      {
-        threshold: options.threshold ?? 0.12,
-        rootMargin: options.rootMargin ?? "0px 0px -48px 0px",
-      }
+      { threshold, rootMargin }
     );
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [visible, options.threshold, options.rootMargin]);
+  }, [visible, threshold, rootMargin]);
 
   return { ref, visible };
 }
