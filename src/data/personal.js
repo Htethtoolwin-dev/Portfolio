@@ -2,6 +2,7 @@ export const personal = {
   name: "Htet Htoo Lwin",
   initials: "HHL",
   profileImage: "/profile.png",
+  profileCardImage: "/profile-card.png",
   role: "Web Developer",
   tagline: "I build clean, performant web experiences that users love.",
   bio: [
@@ -24,4 +25,5 @@ export const personal = {
     linkedin: "https://www.linkedin.com/in/htet-htoo-lwin-bb5bb6372?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     twitter: "",
   },
+  handle: "Htethtoolwin-dev",
 };

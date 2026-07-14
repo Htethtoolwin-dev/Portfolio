@@ -37,4 +37,16 @@ export const projects = [
     githubUrl: "https://github.com/Htethtoolwin-dev/Logitrack",
     featured: true,
   },
+
+  {
+    id: "portfolio",
+    title: "Portfolio",
+    description: "Portfolio website built with React, Tailwind, and Vite.",
+    image: "/projects/portfolio.png",
+    gradient: "from-emerald-400 to-teal-600",
+    tags: ["React", "Tailwind", "Vite"],
+    liveUrl: "https://htethtoolwin-portfolio.vercel.app/",
+    githubUrl: "https://github.com/Htethtoolwin-dev/Portfolio",
+    featured: true,
+  },
 ];

@@ -45,31 +45,37 @@ export default function ProjectCard({ project }) {
   const showImage = project.image && !imageError;
 
   return (
-    <article className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] transition-all duration-300 hover:border-[var(--accent)] md:hover:-translate-y-1 md:hover:shadow-xl md:hover:shadow-indigo-500/10">
-      <div className={`relative flex h-40 items-center justify-center bg-gradient-to-br sm:h-48 ${project.gradient}`}>
+    <article className="group card-hover-lift flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] hover:border-[var(--accent)]">
+      <div className={`relative flex h-40 shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br sm:h-48 ${project.gradient}`}>
         {showImage ? (
           <img
             src={project.image}
             alt={project.title}
             loading="lazy"
             onError={() => setImageError(true)}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          <span className="text-3xl font-bold text-white/90 sm:text-4xl">{project.title.charAt(0)}</span>
+          <span className="text-3xl font-bold text-white/90 transition-transform duration-500 group-hover:scale-110 sm:text-4xl">
+            {project.title.charAt(0)}
+          </span>
         )}
-        <div className="absolute inset-0 hidden items-center justify-center gap-2 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:flex md:flex-wrap md:px-4">
+        <div className="absolute inset-0 hidden items-center justify-center gap-2 bg-black/60 opacity-0 backdrop-blur-[2px] transition-all duration-300 group-hover:opacity-100 md:flex md:flex-wrap md:px-4">
           <ProjectLinks project={project} variant="overlay" />
         </div>
       </div>
       <div className="flex flex-1 flex-col p-4 sm:p-6">
         <h3 className="text-lg font-semibold sm:text-xl">{project.title}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">{project.description}</p>
-        <div className="mt-4 md:hidden"><ProjectLinks project={project} variant="inline" /></div>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span key={tag} className="rounded-md bg-[var(--bg-primary)] px-2.5 py-1 text-xs font-medium text-[var(--accent)]">{tag}</span>
-          ))}
+        <div className="mt-4 shrink-0 space-y-4">
+          <div className="md:hidden">
+            <ProjectLinks project={project} variant="inline" />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span key={tag} className="rounded-md bg-[var(--bg-primary)] px-2.5 py-1 text-xs font-medium text-[var(--accent)]">{tag}</span>
+            ))}
+          </div>
         </div>
       </div>
     </article>
