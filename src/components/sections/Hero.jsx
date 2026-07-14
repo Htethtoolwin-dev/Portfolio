@@ -9,9 +9,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100dvh] items-center justify-center scroll-mt-20 overflow-hidden pt-16 sm:pt-20"
+      className="relative flex min-h-[100dvh] items-center justify-center scroll-mt-20 pt-16 sm:pt-20"
     >
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-indigo-500/15 blur-3xl animate-mesh-drift dark:bg-indigo-500/20 sm:h-96 sm:w-96" />
         <div className="absolute -right-20 top-10 h-80 w-80 rounded-full bg-violet-500/12 blur-3xl animate-mesh-drift-reverse dark:bg-violet-500/18 sm:h-[28rem] sm:w-[28rem]" />
         <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl animate-glow-pulse sm:h-80 sm:w-80" />
