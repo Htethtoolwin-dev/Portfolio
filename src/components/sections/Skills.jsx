@@ -5,10 +5,16 @@ import Reveal from "../ui/Reveal";
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative scroll-mt-20 overflow-hidden bg-[var(--bg-secondary)] py-16 sm:py-24">
+    <section
+      id="skills"
+      className="relative scroll-mt-20 overflow-hidden bg-[var(--bg-secondary)] py-16 sm:py-24"
+    >
       <div className="pointer-events-none absolute -right-32 top-0 h-64 w-64 rounded-full bg-indigo-500/8 blur-3xl" />
       <div className="page-container relative">
-        <SectionHeading title="Skills & Tools" subtitle="Technologies I work with to bring ideas to life." />
+        <SectionHeading
+          title="Skills & Tools"
+          subtitle="Technologies I work with to bring ideas to life."
+        />
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {skillCategories.map((category, index) => (
             <Reveal key={category.key} delay={index * 100}>

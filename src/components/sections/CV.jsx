@@ -8,7 +8,10 @@ const actionClass =
 
 export default function CV() {
   return (
-    <section id="cv" className="scroll-mt-20 bg-[var(--bg-secondary)] py-16 sm:py-24">
+    <section
+      id="cv"
+      className="scroll-mt-20 bg-[var(--bg-secondary)] py-16 sm:py-24"
+    >
       <div className="page-container">
         <SectionHeading
           title="Htet Htoo Lwin's CV"

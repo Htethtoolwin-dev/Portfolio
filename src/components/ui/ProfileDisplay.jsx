@@ -19,7 +19,7 @@ export default function ProfileDisplay() {
   }, []);
 
   return (
-    <div className="relative flex w-full max-w-[min(100%,400px)] justify-center lg:max-w-[420px] lg:justify-end">
+    <div className="relative mx-auto flex w-full max-w-[min(92vw,22rem)] justify-center sm:max-w-[min(100%,400px)] lg:mx-0 lg:max-w-[420px] lg:justify-end">
       <div className="pointer-events-none absolute -inset-8 rounded-[2.5rem] bg-indigo-500/15 blur-3xl" />
       <ProfileCard
         className="relative w-full"

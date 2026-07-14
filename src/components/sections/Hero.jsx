@@ -7,7 +7,10 @@ import ProfileDisplay from "../ui/ProfileDisplay";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative flex min-h-[100dvh] items-center scroll-mt-20 overflow-hidden pt-16 sm:pt-20">
+    <section
+      id="home"
+      className="relative flex min-h-[100dvh] items-center justify-center scroll-mt-20 overflow-hidden pt-16 sm:pt-20"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-1/4 h-72 w-72 rounded-full bg-indigo-500/15 blur-3xl animate-mesh-drift dark:bg-indigo-500/20 sm:h-96 sm:w-96" />
         <div className="absolute -right-20 top-10 h-80 w-80 rounded-full bg-violet-500/12 blur-3xl animate-mesh-drift-reverse dark:bg-violet-500/18 sm:h-[28rem] sm:w-[28rem]" />
@@ -22,8 +25,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="page-container relative grid items-center gap-10 py-12 sm:gap-12 sm:py-16 lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:py-20">
-        <div className="order-2 min-w-0 text-center lg:order-1 lg:text-left">
+      <div className="page-container relative grid w-full justify-items-center items-center gap-10 py-12 sm:gap-12 sm:py-16 lg:grid-cols-2 lg:justify-items-stretch lg:gap-16 xl:gap-24 lg:py-20">
+        <div className="order-2 w-full min-w-0 text-center lg:order-1 lg:text-left">
           <p className="animate-fade-in-up mb-3 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg-secondary)]/80 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-[var(--accent)] backdrop-blur-sm sm:mb-4 sm:text-sm">
             <Sparkles size={14} className="shrink-0" />
             Hi, I&apos;m
@@ -38,17 +41,24 @@ export default function Hero() {
           <p className="animate-fade-in-up animate-delay-300 mx-auto mt-4 max-w-lg text-base leading-relaxed text-[var(--text-muted)] sm:mt-6 sm:text-lg lg:mx-0">
             {personal.tagline}
           </p>
-          <div className="animate-fade-in-up animate-delay-400 mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 lg:justify-start">
-            <Button onClick={() => scrollToSection("#projects")} className="btn-shine w-full sm:w-auto">
+          <div className="animate-fade-in-up animate-delay-400 mx-auto mt-6 flex w-full max-w-sm flex-col gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 lg:mx-0 lg:justify-start">
+            <Button
+              onClick={() => scrollToSection("#projects")}
+              className="btn-shine w-full sm:w-auto"
+            >
               View My Work
             </Button>
-            <Button variant="secondary" onClick={() => scrollToSection("#contact")} className="btn-shine w-full sm:w-auto">
+            <Button
+              variant="secondary"
+              onClick={() => scrollToSection("#contact")}
+              className="btn-shine w-full sm:w-auto"
+            >
               Contact Me
             </Button>
           </div>
         </div>
 
-        <div className="animate-fade-in-up animate-delay-300 order-1 flex justify-center lg:order-2 lg:justify-end">
+        <div className="animate-fade-in-up animate-delay-300 order-1 flex w-full justify-center lg:order-2 lg:justify-end">
           <ProfileDisplay />
         </div>
       </div>

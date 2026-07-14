@@ -7,16 +7,23 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-20 py-16 sm:py-24">
       <div className="page-container">
-        <SectionHeading title="About Me" subtitle="A little bit about my background and what drives me." />
+        <SectionHeading
+          title="About Me"
+          subtitle="A little bit about my background and what drives me."
+        />
         <div className="grid items-start gap-12 lg:grid-cols-5">
           <Reveal className="space-y-4 lg:col-span-3" delay={100}>
             {personal.bio.map((paragraph, index) => (
-              <p key={index} className="max-w-prose leading-relaxed text-[var(--text-muted)]">
+              <p
+                key={index}
+                className="max-w-prose leading-relaxed text-[var(--text-muted)]"
+              >
                 {paragraph}
               </p>
             ))}
             <div className="flex items-center gap-2 pt-2 text-sm text-[var(--text-muted)]">
-              <MapPin size={16} className="text-[var(--accent)]" /> {personal.location}
+              <MapPin size={16} className="text-[var(--accent)]" />{" "}
+              {personal.location}
             </div>
             <div className="pt-4">
               <a
@@ -35,8 +42,12 @@ export default function About() {
             {personal.highlights.map((item, index) => (
               <Reveal key={item.label} delay={150 + index * 80}>
                 <div className="card-hover-lift h-full rounded-2xl border border-[var(--border)] bg-[var(--bg-secondary)] p-4 text-center sm:p-6">
-                  <p className="text-xl font-bold text-[var(--accent)] sm:text-2xl">{item.value}</p>
-                  <p className="mt-1 text-xs text-[var(--text-muted)] sm:text-sm">{item.label}</p>
+                  <p className="text-xl font-bold text-[var(--accent)] sm:text-2xl">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-xs text-[var(--text-muted)] sm:text-sm">
+                    {item.label}
+                  </p>
                 </div>
               </Reveal>
             ))}
