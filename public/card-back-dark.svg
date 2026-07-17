@@ -8,7 +8,7 @@
   <rect width="800" height="1000" fill="url(#bg)"/>
   <rect x="60" y="60" width="680" height="880" rx="24" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.15"/>
   <text x="400" y="400" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700">Htet Htoo Lwin</text>
-  <text x="400" y="480" text-anchor="middle" fill="#d4d4d4" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500">Web Developer</text>
+  <text x="400" y="480" text-anchor="middle" fill="#d4d4d4" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500">Full-Stack Developer</text>
   <text x="400" y="580" text-anchor="middle" fill="#a3a3a3" font-family="Inter, Arial, sans-serif" font-size="24">hhtoolwin2022@gmail.com</text>
   <text x="400" y="640" text-anchor="middle" fill="#a3a3a3" font-family="Inter, Arial, sans-serif" font-size="22">Pathum Thani, Thailand</text>
   <rect x="200" y="700" width="400" height="3" fill="#ffffff" rx="2" opacity="0.8"/>

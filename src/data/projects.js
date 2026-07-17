@@ -1,5 +1,23 @@
 export const projects = [
   {
+    id: "ai study hub",
+    title: "AI Study Hub",
+    description:
+      "Developed a full-stack AI-powered learning platform that allows users to upload study materials and generate AI summaries, flashcards, quizzes, study plans, and document-based chat. Built with Next.js, Supabase PostgreSQL, Prisma ORM, Supabase Auth, and Google Gemini API.",
+    image: "/projects/study.png",
+    gradient: "from-indigo-500 to-purple-600",
+    tags: [
+      "Next.js",
+      "PostgreSQL (Supabase)",
+      "Supabase Auth",
+      "Prisma ORM",
+      "Google Gemini API",
+    ],
+    liveUrl: "https://ai-study-hub-gamma.vercel.app/",
+    githubUrl: "https://github.com/Htethtoolwin-dev/AI-Study-Hub",
+    featured: true,
+  },
+  {
     id: "travelease",
     title: "TravelEase",
     description:
@@ -22,6 +40,26 @@ export const projects = [
     tags: ["React", "Tailwind", "Recharts", "Google Gemini API"],
     liveUrl: "https://ai-driven-analytics.vercel.app/",
     githubUrl: "https://github.com/Htethtoolwin-dev/AI-Driven-Analytics-",
+    featured: true,
+  },
+  {
+    id: "event-booking-system",
+    title: "Event Booking System",
+    description:
+      "Developed a full-stack Event Booking System with secure JWT authentication, event booking workflows, and an admin dashboard for managing events, bookings, and users. Built using Next.js, Next.js App Router, TypeScript, Prisma ORM, PostgreSQL (Neon), Tailwind CSS, and shadcn/ui, featuring responsive design, role-based access control, and scalable architecture.",
+    image: "/projects/event.png",
+    gradient: "from-emerald-400 to-teal-600",
+    tags: [
+      "Next.js",
+      "Next.js API Route",
+      "TypeScript",
+      "Prisma ORM",
+      "PostgreSQL (Neon)",
+      "Tailwind CSS",
+      "shadcn/ui",
+    ],
+    liveUrl: "https://event-booking-system-rust.vercel.app/",
+    githubUrl: "https://github.com/Htethtoolwin-dev/Event-Booking-System",
     featured: true,
   },
 
