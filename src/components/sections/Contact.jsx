@@ -21,6 +21,7 @@ export default function Contact() {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: "" }));
+    if (status !== "idle") setStatus("idle");
   };
 
   const validate = () => {
@@ -36,8 +37,17 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
+    const submission = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      message: form.message.trim(),
+    };
     if (!FORMSPREE_ID || FORMSPREE_ID === "your_formspree_id") {
-      window.location.href = `mailto:${personal.email}?subject=Portfolio contact from ${encodeURIComponent(form.name)}&body=${encodeURIComponent(form.message)}`;
+      const subject = encodeURIComponent(`Portfolio contact from ${submission.name}`);
+      const body = encodeURIComponent(
+        `From: ${submission.name}\nEmail: ${submission.email}\n\n${submission.message}`,
+      );
+      window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
       return;
     }
     setStatus("loading");
@@ -45,7 +55,10 @@ export default function Contact() {
       const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...submission,
+          _subject: `Portfolio contact from ${submission.name}`,
+        }),
       });
       setStatus(response.ok ? "success" : "error");
       if (response.ok) setForm({ name: "", email: "", message: "" });
@@ -84,16 +97,16 @@ export default function Contact() {
             {["name", "email"].map((field) => (
               <div key={field}>
                 <label htmlFor={field} className="mb-1.5 block text-sm font-medium capitalize">{field}</label>
-                <input id={field} name={field} type={field === "email" ? "email" : "text"} value={form[field]} onChange={handleChange} className={inputClass} placeholder={field === "email" ? "you@example.com" : "Your name"} aria-invalid={!!errors[field]} />
-                {errors[field] && <p className="mt-1 text-sm text-red-500" role="alert">{errors[field]}</p>}
+                <input id={field} name={field} type={field === "email" ? "email" : "text"} value={form[field]} onChange={handleChange} className={inputClass} placeholder={field === "email" ? "you@example.com" : "Your name"} autoComplete={field} maxLength={field === "email" ? 254 : 100} aria-invalid={!!errors[field]} aria-describedby={errors[field] ? `${field}-error` : undefined} />
+                {errors[field] && <p id={`${field}-error`} className="mt-1 text-sm text-red-500" role="alert">{errors[field]}</p>}
               </div>
             ))}
             <div>
               <label htmlFor="message" className="mb-1.5 block text-sm font-medium">Message</label>
-              <textarea id="message" name="message" rows={5} value={form.message} onChange={handleChange} className={`${inputClass} resize-none`} placeholder="Your message..." aria-invalid={!!errors.message} />
-              {errors.message && <p className="mt-1 text-sm text-red-500" role="alert">{errors.message}</p>}
+              <textarea id="message" name="message" rows={5} value={form.message} onChange={handleChange} className={`${inputClass} resize-none`} placeholder="Your message..." maxLength={3000} aria-invalid={!!errors.message} aria-describedby={errors.message ? "message-error" : undefined} />
+              {errors.message && <p id="message-error" className="mt-1 text-sm text-red-500" role="alert">{errors.message}</p>}
             </div>
-            <Button type="submit" disabled={status === "loading"} className="btn-shine w-full sm:w-auto">
+            <Button type="submit" disabled={status === "loading"} className="btn-shine w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">
               <Send size={16} /> {status === "loading" ? "Sending..." : "Send Message"}
             </Button>
             {status === "success" && <p className="text-sm text-emerald-500" role="status">Message sent successfully! I&apos;ll get back to you soon.</p>}
