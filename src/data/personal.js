@@ -12,8 +12,8 @@ export const personal = {
   ],
   email: "hhtoolwin2022@gmail.com",
   location: "Pathum Thani, Thailand",
-  resumeUrl: "/Htet-Htoo-Lwin-CV.pdf",
-  resumeFileName: "CV _ HtetHtooLwin.pdf",
+  resumeUrl: "/Htet-Htoo-Lwin-CV-1c27baa4.pdf",
+  resumeFileName: "Htet-Htoo-Lwin-CV.pdf",
   highlights: [
     { label: "Projects built", value: "5+" },
     { label: "Years experience", value: "1" },
